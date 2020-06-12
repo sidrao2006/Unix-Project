@@ -1,17 +1,20 @@
 function guessinggamme {
+
+    # Defining number of files
+    files=$(ls -1 | wc -l)
     # Question (Asking for the first time)
     echo "How many files are there in this directory"
     read response
     # A loop
     # Using condition to check answer
-    while [[ $response != 13 ]]
+    while [[ $response != $files ]]
     do
-        if [[ $response -gt 13 ]]
+        if [[ $response -gt $files ]]
         then
             # If the answer was too high
             echo "Sorry that's not it...your reponse was too high"
             echo
-        elif [[ $response -lt 13 ]]
+        elif [[ $response -lt $files ]]
         then
             # If the answer was too low
             echo "Sorry that's not it...your reponse was too low"
@@ -24,7 +27,7 @@ function guessinggamme {
 
     # Loop complete
     echo
-    echo "Hey congratulations!!! You got it right. 13 it is!"
+    echo "Hey congratulations!!! You got it right. $files it is!"
 }
 
 # Calling function
